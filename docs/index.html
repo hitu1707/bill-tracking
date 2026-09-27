@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 2.17.0-dev.1">
-  <title>Bill Tracker Runtime Architecture Diagram</title>
+  <title>Bill Tracker — Runtime Architecture Diagram</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5081,11 +5081,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="BLUEPRINT / REV 01"
            data-preset-badge-editorial="EDITORIAL / FIELD NOTE">
         <div class="pulse-dot"></div>
-        <h1>Bill Tracker Runtime Architecture</h1>
+        <h1>Bill Tracker — Runtime Architecture</h1>
       </div>
     </div>
 
-    <script id="archify-guided-views-data" type="application/json">[]</script>
+    <script id="archify-guided-views-data" type="application/json">[{"id":"scan-path","label":"Scan request path","focus":["spa","api","auth","ingest","extract","mongo"],"note":"One continuous chain from the camera frame to the persisted bill document."},{"id":"trust-boundaries","label":"Trust boundaries","focus":["users","spa","api","auth","gemini","media","mongo"],"note":"Where untrusted input enters and where bill data leaves the application boundary."}]</script>
 
     <script id="archify-i18n-data" type="application/json">{"locale":"en","messages":{"viewer.kind.frontend":"Frontend","viewer.kind.backend":"Backend","viewer.kind.database":"Database","viewer.kind.cloud":"Cloud","viewer.kind.security":"Security","viewer.kind.messagebus":"Message bus","viewer.kind.external":"External","viewer.kind.neutral":"Neutral","viewer.kind.node":"Node","viewer.kind.start":"Start","viewer.kind.active":"Active","viewer.kind.waiting":"Waiting","viewer.kind.decision":"Decision","viewer.kind.success":"Success","viewer.kind.failure":"Failure","viewer.toolbar.actions":"Diagram actions","viewer.theme.toggle.title":"Toggle theme (T)","viewer.theme.toggle":"Toggle color theme","viewer.theme.dark":"Dark","viewer.theme.light":"Light","viewer.preset.choose.title":"Choose visual style (S cycles)","viewer.preset.choose":"Choose visual style","viewer.preset.style":"Style","viewer.preset.menu":"Visual style","viewer.preset.identity":"Visual identity","viewer.preset.cycles":"S cycles","viewer.preset.classic":"Classic","viewer.preset.classic.short":"Classic","viewer.preset.classic.hint":"Stable technical default","viewer.preset.flow":"Signal Flow","viewer.preset.flow.short":"Flow","viewer.preset.flow.hint":"Motion-forward presentation","viewer.preset.blueprint":"Blueprint","viewer.preset.blueprint.hint":"Engineering review","viewer.preset.editorial":"Editorial","viewer.preset.editorial.hint":"Publication and launch notes","viewer.preset.badge.signalFlow":"SIGNAL FLOW","viewer.preset.badge.blueprint":"BLUEPRINT / REV 01","viewer.preset.badge.editorial":"EDITORIAL / FIELD NOTE","viewer.preset.badge.editorialPlate":"ARCHIFY / PLATE 04","viewer.preset.current":"Visual style: {style}. Choose visual style","viewer.motion.live":"Live","viewer.motion.still":"Still","viewer.motion.pause":"Pause motion","viewer.motion.resume":"Resume motion","viewer.motion.reduced":"Motion paused by reduced-motion preference","viewer.motion.hidden":"Motion paused while this page is hidden","viewer.motion.yielding":"Pause motion; currently yielding to {owner}","viewer.motion.yielding.title":"Live preview enabled · yielding to {owner}","viewer.owner.story":"the guided story","viewer.owner.chapter":"the active chapter","viewer.owner.chapterPreview":"the chapter delta preview","viewer.owner.handoff":"the chapter handoff","viewer.owner.route":"Route Probe","viewer.owner.lens":"Semantic Lens","viewer.owner.relationship":"Relationship Preview","viewer.owner.intent":"Intent Trace","viewer.owner.focus":"semantic focus","viewer.owner.legend":"legend preview","viewer.owner.reader":"reader interaction","viewer.present.enter":"Enter presentation stage","viewer.present.enter.title":"Presentation stage (F)","viewer.present.exit":"Exit presentation stage","viewer.present.exit.title":"Exit presentation stage (F or Escape)","viewer.present.present":"Present","viewer.present.exit.label":"Exit","viewer.export.button":"Export","viewer.export.button.title":"Export diagram (E)","viewer.export.diagram":"Export diagram","viewer.export.menu":"Export","viewer.export.subtitle":"Portable, clean outputs","viewer.export.share":"Share","viewer.export.shareCard":"Share Card","viewer.export.routeShareCard":"Route Share Card","viewer.export.reachShareCard":"Reach Share Card","viewer.export.copyShareCard":"Copy Share Card","viewer.export.copyDiagram":"Copy diagram","viewer.export.clipboardPng":"PNG to clipboard","viewer.export.raster":"Raster images","viewer.export.image":"Image","viewer.export.lossless":"Lossless image","viewer.export.compact":"Compact image","viewer.export.modern":"Modern image","viewer.export.vectorMotion":"Vector and motion","viewer.export.vectorMotion.heading":"Vector \u0026 motion","viewer.export.editable":"Editable vector","viewer.export.motion6s":"6s motion","viewer.export.unsupported":"Not supported by this browser","viewer.export.clipboardUnsupported":"Clipboard image write not supported by this browser","viewer.export.clipboardUnsupported.period":"Clipboard image write not supported by this browser.","viewer.export.clipboardUnsupported.short":"Clipboard image write not supported in this browser.","viewer.export.motionUnavailable":"Motion capture unavailable in this browser","viewer.export.webmUnavailable":"WebM unavailable in this browser","viewer.export.failed":"Export failed: {message}","viewer.export.unknownVariant":"Unknown Share Card variant: {variant}","viewer.export.routeRequired":"Trace a route before exporting a Route Share Card","viewer.export.reachRequired":"Trace authored reach before exporting a Reach Share Card","viewer.export.unknown":"unknown","viewer.export.routeFailed":"Route Share Card export failed: {message}","viewer.export.reachFailed":"Reach Share Card export failed: {message}","viewer.export.copyFailed":"Copy failed: {message}","viewer.export.copiedPng":"Copied PNG to clipboard","viewer.export.copiedShare":"Copied Share Card","viewer.export.downloadedShare":"Downloaded Share Card","viewer.export.downloadedRoute":"Downloaded Route Share Card","viewer.export.downloadedReach":"Downloaded Reach Share Card","viewer.export.downloadedWebm":"Downloaded WebM","viewer.export.recording":"Recording 6 seconds of motion…","viewer.export.card.routeSummary.one":"Route: {source} → {target} · {count} directed hop","viewer.export.card.routeSummary.other":"Route: {source} → {target} · {count} directed hops","viewer.export.card.reachSummary":"Authored {direction} from {origin} · {nodes} · {links} · max {hops}","viewer.export.card.node.one":"{count} node","viewer.export.card.node.other":"{count} nodes","viewer.export.card.link.one":"{count} link","viewer.export.card.link.other":"{count} links","viewer.export.card.hop.one":"{count} hop","viewer.export.card.hop.other":"{count} hops","viewer.export.card.routeBadge":"ARCHIFY · ROUTE · {hops}","viewer.export.card.reachBadge":"ARCHIFY · {direction} REACH","viewer.export.card.defaultBadge":"ARCHIFY · {preset} · {theme}","viewer.export.direction.upstream":"Upstream","viewer.export.direction.downstream":"Downstream","viewer.export.error.canvasUnavailable":"Canvas unavailable for {label}","viewer.export.error.contextUnavailable":"2D canvas context unavailable for {label}","viewer.export.error.toBlobUnavailable":"canvas.toBlob unavailable for {label}","viewer.export.error.toBlobNull":"canvas.toBlob returned no data for {label}","viewer.export.error.variantsCombined":"Share Card variants cannot be combined","viewer.export.error.viewerState":"Share Card export could not remove temporary viewer state","viewer.export.error.routeState":"Route Card export could not preserve the resolved route safely","viewer.export.error.reachState":"Reach Card export could not preserve authored reach safely","viewer.export.error.webmRequirements":"WebM motion export requires a trace animation and browser MediaRecorder support","viewer.export.error.mediaRecorder":"MediaRecorder failed","viewer.export.error.emptyWebm":"MediaRecorder produced an empty WebM","viewer.export.error.webmBackground":"SVG background could not be loaded for WebM export","viewer.guided.region":"Guided diagram views","viewer.guided.previous":"Previous guided view","viewer.guided.previous.title":"Previous guided view ([)","viewer.guided.next":"Next guided view","viewer.guided.next.title":"Next guided view (])","viewer.guided.views":"Guided views","viewer.guided.explore":"Explore this system","viewer.guided.intro":"Step through curated paths without changing the source diagram.","viewer.guided.trail":"Story trail","viewer.guided.beat":"Beat","viewer.guided.nextBeat":"Next","viewer.guided.play":"Play guided story","viewer.guided.play.title":"Play guided story (P)","viewer.guided.pause":"Pause guided story","viewer.guided.pause.title":"Pause guided story (P)","viewer.guided.replay":"Replay guided story","viewer.guided.replay.title":"Replay guided story (P)","viewer.guided.playStory":"Play story","viewer.guided.pauseStory":"Pause","viewer.guided.replayStory":"Replay story","viewer.guided.motionUnavailable":"Story playback unavailable while motion is Still","viewer.guided.enableMotion":"Switch motion to Live to play the guided story","viewer.guided.selectBeatLink":"Select a Story Beat to copy its exact link","viewer.guided.copyMoment":"Copy moment","viewer.guided.momentCopied":"Moment link copied","viewer.guided.momentCopyFailed":"Could not copy story moment link","viewer.guided.copied":"Copied","viewer.guided.copyFailed":"Copy failed","viewer.guided.showAll":"Show all","viewer.guided.showAll.aria":"Show entire diagram","viewer.guided.chapters":"Story chapters","viewer.guided.storyTrail":"Story trail for {label}: {count} beats","viewer.guided.chapter.open":"Open chapter {index} of {total}: {label}, {count} stops","viewer.guided.chapter.current":"Current chapter {index} of {total}: {label}, {count} stops","viewer.guided.chapter.selectedNodes":"{count} selected nodes","viewer.guided.chapter.stops":"{count} stops","viewer.guided.chapter.stop.one":"{count} stop","viewer.guided.chapter.stop.other":"{count} stops","viewer.guided.chapter.current.title":"{label} — current chapter, {count} stops","viewer.guided.chapter.delta.expanded":"{stay} stay, {enter} enter, {leave} leave","viewer.guided.chapter.delta.aria":"Open chapter {index} of {total}: {label}. Chapter focus delta: {delta}","viewer.guided.chapter.delta.title":"{label} — {delta} chapter focus","viewer.guided.handoff":"{from} → {to} · via {label}","viewer.guided.share.chapter":"Chapter {index} / {total}","viewer.guided.share.initial":"Chapter 01 / 01","viewer.guided.share.default":"Guided chapter","viewer.guided.state.ready":"Ready","viewer.guided.state.playing":"Playing","viewer.guided.state.settled":"Settled","viewer.guided.state.paused":"Paused","viewer.guided.state.pinned":"Pinned","viewer.guided.state.still":"Still","viewer.guided.share.step":"Step {index} / {total} · {label}","viewer.guided.share.staticMoment":"{step} · Static moment","viewer.guided.share.complete":"{count} steps complete · {note}","viewer.guided.share.settled":"Path settled for reading.","viewer.guided.share.staticPath":"{count} steps · Static path","viewer.guided.share.ready":"{count} steps · Ready","viewer.guided.share.aria":"{state} chapter {index} of {total}: {label}. {beat}. {route}","viewer.guided.beat.start":"Beat {index} / {total} · {label} · starting point","viewer.guided.beat.forward":"Beat {index} / {total} · {from} → {to}","viewer.guided.beat.reverse":"Beat {index} / {total} · {from} → {to} · reverse authored link","viewer.guided.beat.multiple":"Beat {index} / {total} · {from} ⇄ {to} · {count} authored links","viewer.guided.beat.group":"Beat {index} / {total} · {from} · {to} · grouped · no direct link","viewer.guided.beat.aria.prefix":"Story beat {index} of {total}: {label}. ","viewer.guided.beat.aria.start":"Starting point.","viewer.guided.beat.aria.forward":"From {from} through one authored forward relationship.","viewer.guided.beat.aria.reverse":"From {from}; the authored relationship points from {to} to {from}.","viewer.guided.beat.aria.multiple":"From {from} through {count} authored relationships; shown without arbitrary motion.","viewer.guided.beat.aria.group":"Grouped from {from} with no direct authored relationship.","viewer.guided.caption.start":"Starting point","viewer.guided.caption.grouped":"Grouped transition · no direct authored link","viewer.guided.caption.more":" +{count} more","viewer.guided.caption.reverse":"Reverse authored relationship","viewer.guided.caption.relationships":"{count} authored relationships","viewer.guided.caption.relationship":"Authored relationship","viewer.guided.caption.direction":"authored direction: {from} → {to}","viewer.guided.caption.starting":"Authored starting point","viewer.guided.beatLink":"Copy link to current story moment: Beat {index} of {total}: {label}","viewer.guided.noStory":"This diagram has no authored guided story.","viewer.guide.eyebrow":"Diagram guide","viewer.guide.close":"Close diagram guide","viewer.guide.inspecting":"Inspecting compiled semantics","viewer.guide.actions":"Diagram exploration actions","viewer.guide.find":"Find any node","viewer.guide.find.hint":"Search labels, responsibilities, kinds, and stable IDs.","viewer.guide.route":"Trace a route","viewer.guide.route.aria":"Trace a directed route","viewer.guide.route.hint":"Ask how two semantic nodes connect in authored direction.","viewer.guide.map":"See the whole system","viewer.guide.map.hint":"Open Semantic Radar with a live viewport and stable nodes.","viewer.guide.lens":"Compare semantic kinds","viewer.guide.lens.hint":"Count roles, reveal their traffic, and compare direct authored links.","viewer.guide.story":"Play the guided story","viewer.guide.story.hint":"Walk the authored chapters and real relationships.","viewer.guide.present":"Enter Presentation Stage","viewer.guide.present.hint":"Give the live diagram the viewport without changing export.","viewer.guide.shortcuts":"Additional keyboard shortcuts","viewer.guide.shortcut.export":"Export","viewer.guide.shortcut.theme":"Theme","viewer.guide.shortcut.style":"Style","viewer.guide.shortcut.reset":"Reset","viewer.guide.shortcut.zoomIn":"Zoom in","viewer.guide.shortcut.zoomOut":"Zoom out","viewer.guide.shortcut.close":"Close","viewer.guide.facts":"{nodes} · {relationships} · {views}","viewer.guide.fact.node.one":"{count} semantic node","viewer.guide.fact.node.other":"{count} semantic nodes","viewer.guide.fact.relationship.one":"{count} relationship","viewer.guide.fact.relationship.other":"{count} relationships","viewer.guide.fact.view.one":"{count} guided view","viewer.guide.fact.view.other":"{count} guided views","viewer.guide.story.available.one":"Walk {count} authored chapter and its real relationships.","viewer.guide.story.available.other":"Walk {count} authored chapters and their real relationships.","viewer.guide.story.unavailable":"No authored guided story in this diagram.","viewer.guide.open":"Open diagram guide","viewer.guide.noStory":"This diagram has no authored guided story.","viewer.finder.title":"Find a node","viewer.finder.close":"Close node finder","viewer.finder.placeholder":"Search labels or IDs","viewer.finder.search":"Search diagram nodes","viewer.finder.results":"Diagram nodes","viewer.finder.empty":"No matching nodes","viewer.finder.result.focus":"Focus {label}","viewer.finder.result.routeStart":"Choose {label} as route start","viewer.finder.result.routeTarget":"Choose {label} as route destination, {links}","viewer.finder.status.empty":"No matching nodes","viewer.finder.status.count.one":"{count} matching node","viewer.finder.status.count.other":"{count} matching nodes","viewer.finder.noun.nodes":"nodes","viewer.finder.link.one":"{count} link","viewer.finder.link.other":"{count} links","viewer.finder.result.focus.one":"Focus {label}, {count} related connection","viewer.finder.result.focus.other":"Focus {label}, {count} related connections","viewer.finder.status.filtered":"{visible} of {available} {noun}","viewer.finder.status.all":"{available} {noun}","viewer.passport.eyebrow":"Semantic passport","viewer.passport.metadata":"Node metadata","viewer.passport.evidence":"Verified source evidence","viewer.passport.verified":"Verified source","viewer.passport.verificationScope":"Verified against local Git at the pinned revision. Remote access has not been checked.","viewer.passport.reach":"Authored reach","viewer.passport.reach.trace":"Trace authored reachability","viewer.passport.upstream":"Upstream","viewer.passport.downstream":"Downstream","viewer.passport.upstream.trace":"Trace upstream authored reachability","viewer.passport.downstream.trace":"Trace downstream authored reachability","viewer.passport.close":"Close semantic passport","viewer.passport.copy":"Copy link","viewer.passport.copy.focus":"Copy link to focused node","viewer.passport.relations":"Relations","viewer.passport.relations.show":"Show connected relationships","viewer.passport.relations.hide":"Hide connected relationships","viewer.passport.relations.list":"Connected relationships","viewer.passport.copyRelation":"Copy relation","viewer.passport.copyNode":"Copy node","viewer.passport.copyPinned":"Copy link to pinned relationship","viewer.passport.copySource":"Copy link to source node","viewer.passport.copy.focused.success":"Focused node link copied","viewer.passport.copy.pinned.success":"Pinned relationship link copied","viewer.passport.copy.focused.failed":"Could not copy focused node link","viewer.passport.copy.pinned.failed":"Could not copy pinned relationship link","viewer.passport.relationship.none":"No connected relationships","viewer.passport.relationship.count.one":"{count} relation","viewer.passport.relationship.count.other":"{count} relations","viewer.passport.relationship.show.one":"Show {count} connected relationship","viewer.passport.relationship.show.other":"Show {count} connected relationships","viewer.passport.relationship.summary":"{out} outgoing · {in} incoming{loops}","viewer.passport.relationship.loops":" · {count} loop","viewer.passport.relationship.explorer":"Direct relationship explorer","viewer.passport.relationship.help":"Use arrow keys to explore relationships. Press Enter or Space to pin details; Escape clears.","viewer.passport.relationship.loopsBack":"loops back","viewer.passport.relationship.connectsTo":"connects to","viewer.passport.relationship.connectsFrom":"connects from","viewer.passport.relationship.pinned":"Pinned relationship · {from} → {to} · {label}","viewer.passport.relationship.inspect":"Inspect relationship {index} of {total}: {from} to {to}, {label}. Press Enter for details.","viewer.passport.relationship.group.out":"Outgoing","viewer.passport.relationship.group.in":"Incoming","viewer.passport.relationship.group.loop":"Self loops","viewer.passport.relationship.row":"{group}: {relationship}, {neighbor}","viewer.passport.relationship.direction.out":"OUT →","viewer.passport.relationship.direction.in":"← IN","viewer.passport.relationship.direction.loop":"LOOP","viewer.passport.sourceCount.one":"{count} verified source reference","viewer.passport.sourceCount.other":"{count} verified source references","viewer.passport.sourceMarker":"SRC","viewer.passport.beacon.one":"{count} verified source; focus this node to inspect","viewer.passport.beacon.other":"{count} verified sources; focus this node to inspect","viewer.passport.repository.open":"Open verified repository revision {revision}","viewer.passport.source.open":"Open verified source {path} at revision {revision}","viewer.passport.source.openLink":"Open ↗","viewer.passport.reach.upstream.one":"Trace {count} upstream authored node","viewer.passport.reach.upstream.other":"Trace {count} upstream authored nodes","viewer.passport.reach.downstream.one":"Trace {count} downstream authored node","viewer.passport.reach.downstream.other":"Trace {count} downstream authored nodes","viewer.passport.reach.noUpstream":"No upstream authored nodes","viewer.passport.reach.noDownstream":"No downstream authored nodes","viewer.passport.reach.status":"{direction} · {nodes} nodes · {links} links · max {hops} hops","viewer.route.eyebrow":"Route probe","viewer.route.start":"Choose a start node","viewer.route.start.find":"Find start","viewer.route.start.find.aria":"Find a route start","viewer.route.copy":"Copy link","viewer.route.copy.aria":"Copy link to traced route","viewer.route.clear":"Clear","viewer.route.clear.aria":"Clear route probe","viewer.route.traced":"Traced route","viewer.route.pickTwo":"Pick two semantic nodes on the diagram","viewer.route.pickOne":"Pick a semantic node on the diagram","viewer.route.controls":"Route journey controls","viewer.route.previous":"Previous route position","viewer.route.play":"Play route journey","viewer.route.pause":"Pause route journey","viewer.route.replay":"Replay route journey","viewer.route.next":"Next route position","viewer.route.journey":"Journey","viewer.route.pause.label":"Pause","viewer.route.replay.label":"Replay","viewer.route.overview":"Overview","viewer.route.overview.aria":"Show complete route overview","viewer.route.instructions":"Choose the source, then the destination. Direction matters.","viewer.route.destination":"Choose a destination from {label}","viewer.route.destination.find":"Find target","viewer.route.destination.find.aria":"Find a reachable route destination","viewer.route.differentDestination":"Choose a different destination","viewer.route.distinct":"A route needs two distinct semantic nodes.","viewer.route.unreachable":"No directed route to {label}","viewer.route.unreachable.detail":"{target} is not reachable from {source}. Pick a highlighted destination.","viewer.route.start.instructions":"Select the source. The next step will reveal only directed destinations.","viewer.route.copy.success":"Traced route link copied","viewer.route.copy.failed":"Could not copy traced route link","viewer.route.position":"Route position {index} of {total}: {label}","viewer.route.step":"Step {index} of {total} · {phase} · {label}","viewer.route.motionRequired":"Automatic journey requires Live motion","viewer.route.trigger.clear":"Clear traced route","viewer.route.overview.status":"{nodes} · {hops} · shortest authored route","viewer.route.overview.node.one":"{count} node","viewer.route.overview.node.other":"{count} nodes","viewer.route.overview.hop.one":"{count} directed hop","viewer.route.overview.hop.other":"{count} directed hops","viewer.route.phase.playing":"Playing","viewer.route.phase.complete":"Complete","viewer.route.phase.inspecting":"Inspecting","viewer.route.destination.count.one":"{count} directed destination available. Pick a highlighted node.","viewer.route.destination.count.other":"{count} directed destinations available. Pick a highlighted node.","viewer.route.noOutgoing":"No outgoing route starts here. Clear and choose another source.","viewer.route.result.title":"{source} to {target}","viewer.route.finder.source.title":"Choose route start","viewer.route.finder.source.placeholder":"Search route sources","viewer.route.finder.source.empty":"No matching route sources","viewer.route.finder.source.results":"Nodes that can start a route","viewer.route.finder.source.noun":"route sources","viewer.route.finder.source.badge":"start","viewer.route.finder.target.title":"Destination from {label}","viewer.route.finder.target.placeholder":"Search reachable destinations","viewer.route.finder.target.empty":"No matching reachable destinations","viewer.route.finder.target.results":"Reachable route destinations","viewer.route.finder.target.noun":"reachable destinations","viewer.route.hop.one":"{count} hop","viewer.route.hop.other":"{count} hops","viewer.lens.eyebrow":"Semantic lens","viewer.lens.title":"Compare system roles","viewer.lens.close":"Close semantic lens","viewer.lens.instruction":"Choose up to two semantic kinds. One reveals its real traffic; two compare only direct authored relationships.","viewer.lens.kinds":"Semantic kinds","viewer.lens.choose":"Choose a kind to inspect its nodes and touching relationships.","viewer.lens.copy":"Copy link to semantic lens","viewer.lens.clear":"Clear semantic lens","viewer.lens.open":"Open semantic lens","viewer.lens.openActive":"Open active semantic lens","viewer.lens.legend":"Semantic legend","viewer.lens.legend.inspect.one":"Inspect {label}, {count} node","viewer.lens.legend.inspect.other":"Inspect {label}, {count} nodes","viewer.lens.kind.count.one":"{label}, {count} node","viewer.lens.kind.count.other":"{label}, {count} nodes","viewer.lens.compare.one":"{first} → {second}: {forward} · {second} → {first}: {reverse} · {count} direct relationship","viewer.lens.compare.other":"{first} → {second}: {forward} · {second} → {first}: {reverse} · {count} direct relationships","viewer.lens.single":"{nodes} · {relationships} · connected peers remain visible","viewer.lens.node.one":"{count} {label} node","viewer.lens.node.other":"{count} {label} nodes","viewer.lens.relationship.one":"{count} touching relationship","viewer.lens.relationship.other":"{count} touching relationships","viewer.radar.title":"Semantic radar","viewer.radar.building":"Building overview","viewer.radar.openFull":"Open full semantic radar","viewer.radar.open":"Open radar","viewer.radar.close":"Close semantic radar","viewer.radar.surface":"Diagram overview. Click a node to focus it, or use arrow keys to pan.","viewer.radar.click":"Click node","viewer.radar.drag":"Drag to pan","viewer.radar.space":"Semantic radar needs more MAP space.","viewer.radar.nodes":"Semantic diagram radar nodes","viewer.radar.focus":"Focus {label} from Semantic Radar","viewer.radar.status":"{count} nodes · {viewport}","viewer.radar.fullMap":"{count} nodes · full map","viewer.radar.compacted":"Radar compacted to avoid covering the Semantic Passport or MAP controls.","viewer.radar.cancelWaiting":"Cancel semantic radar waiting for more MAP space","viewer.radar.needsSpace":"Semantic radar needs more visible MAP space","viewer.radar.viewport.full":"full map","viewer.radar.viewport.width":"{percent}% width","viewer.radar.viewport.scale":"{percent}% viewport","viewer.nav.controls":"Diagram view controls","viewer.nav.route":"Trace a directed route","viewer.nav.route.title":"Trace route (R)","viewer.nav.route.short":"PATH","viewer.nav.radar":"Open semantic radar","viewer.nav.radar.title":"Semantic radar (M)","viewer.nav.radar.short":"MAP","viewer.nav.lens":"Open semantic lens","viewer.nav.lens.title":"Semantic lens (L)","viewer.nav.lens.short":"LENS","viewer.nav.find":"Find a node","viewer.nav.find.title":"Find a node (/)","viewer.nav.guide":"Open diagram guide","viewer.nav.guide.title":"Diagram guide (?)","viewer.nav.zoomOut":"Zoom out","viewer.nav.zoomOut.title":"Zoom out (-)","viewer.nav.reset":"Reset diagram view","viewer.nav.reset.title":"Reset view (0)","viewer.nav.read":"READ","viewer.nav.zoomIn":"Zoom in","viewer.nav.zoomIn.title":"Zoom in (+)","viewer.nav.camera":"{hint}. Reset diagram view","viewer.nav.camera.title":"{semantic}{hint} · reset view (0)","viewer.nav.camera.semantic":"Semantic camera active · ","viewer.nav.level.map":"MAP","viewer.nav.level.read":"READ","viewer.nav.level.full":"FULL","viewer.nav.level.auto":"AUTO","viewer.nav.detail.map":"Zoom in to reveal relationship labels and node context","viewer.nav.detail.read":"Zoom in again to reveal tags and annotations","viewer.nav.detail.full":"Full diagram detail","viewer.intent.summary":"{label}. {out} outgoing, {in} incoming{loops}. {total} connections. Press Enter for details.","viewer.intent.loops":", {count} self loop","viewer.common.copied":"Copied","viewer.common.copyFailed":"Copy failed","viewer.common.copyLink":"Copy link","viewer.common.clear":"Clear","viewer.common.close":"Close"}}</script>
     <div class="guided-views no-print" id="guided-views" hidden aria-label="Guided diagram views">
@@ -5130,8 +5130,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / PLATE 04">
-      <svg viewBox="0 0 1310 574" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-preset="classic" data-quality-profile="showcase">
-        <title id="archify-diagram-title">Bill Tracker Runtime Architecture</title>
+      <svg viewBox="0 0 1140 495" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-preset="classic" data-quality-profile="showcase">
+        <title id="archify-diagram-title">Bill Tracker — Runtime Architecture</title>
         <desc id="archify-diagram-description">An architecture diagram generated by Archify.</desc>
         <!-- Definitions -->
         <defs>
@@ -5156,225 +5156,316 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Boundaries (behind everything) -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="Untrusted client device" x="24" y="186" width="148" height="110" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="Untrusted Client Network" x="10" y="10" width="150" height="102" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="security-group" data-composition-frame-id="1" data-composition-frame-label="Express API :3000 - CORS edge, public /uploads, session-gated routes" x="278" y="186" width="698" height="110" rx="8" class="c-security-group" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="1" data-composition-frame-label="Client Tier · Vercel Static Edge" x="8.393538787096773" y="165" width="159.21292242580645" height="106" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="2" data-composition-frame-label="Identity providers" x="684" y="46" width="182" height="110" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="security-group" data-composition-frame-id="2" data-composition-frame-label="Application Trust Boundary · CORS allowlist + httpOnly session cookie" x="195" y="165" width="720" height="106" rx="8" class="c-security-group" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="3" data-composition-frame-label="Third-party SaaS egress" x="680" y="396" width="590" height="110" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="3" data-composition-frame-label="Third-Party SaaS · bill data leaves the boundary" x="365" y="10" width="730" height="102" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="4" data-composition-frame-label="Observability plane" x="282" y="396" width="236" height="110" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="4" data-composition-frame-label="Host-Local Services" x="745" y="325" width="180" height="102" rx="12" class="c-region" stroke-width="1"/>
+
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="5" data-composition-frame-label="Data Tier" x="950" y="165" width="150" height="106" rx="12" class="c-region" stroke-width="1"/>
+
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="6" data-composition-frame-label="Observability Plane" x="195" y="325" width="180" height="102" rx="12" class="c-region" stroke-width="1"/>
 
         <!-- Connection paths (before components for correct z-order) -->
-        <path data-edge-from="spa" data-edge-to="edge" data-edge-label="POST /api/bills/scan" data-edge-key="0" data-composition-points="156,243;296,243" d="M 156 243 L 296 243" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="edge" data-edge-to="api" data-edge-label="passport session gate" data-edge-key="1" data-composition-points="412,243;544,243" d="M 412 243 L 544 243" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="api" data-edge-to="service" data-edge-label="temp file path" data-edge-key="2" data-composition-points="694,243;826,243" d="M 694 243 L 826 243" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="service" data-edge-to="extractor" data-edge-label="base64 image to LLM" data-edge-key="3" data-composition-points="892,276;892,348;775,348;775,420" d="M 892 276 L 892 340 Q 892 348 884 348 L 783 348 Q 775 348 775 356 L 775 420" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="service" data-edge-to="cdn" data-edge-label="image upload" data-edge-key="4" data-composition-points="892,276;892,348;975,348;975,420" d="M 892 276 L 892 340 Q 892 348 900 348 L 967 348 Q 975 348 975 356 L 975 420" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="service" data-edge-to="atlas" data-edge-label="write bills + counter" data-edge-key="5" data-composition-points="958,243;1076,243;1076,453;1100,453" d="M 958 243 L 1068 243 Q 1076 243 1076 251 L 1076 445 Q 1076 453 1084 453 L 1100 453" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="edge" data-edge-to="identity" data-edge-label="OAuth2 callback / email OTP" data-edge-key="6" data-composition-points="354,210;354,103;700,103" d="M 354 210 L 354 111 Q 354 103 362 103 L 700 103" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
-        <path data-edge-from="api" data-edge-to="observability" data-edge-label="GET /metrics + log push" data-edge-key="7" data-composition-points="619,276;619,348;400,348;400,420" d="M 619 276 L 619 340 Q 619 348 611 348 L 408 348 Q 400 348 400 356 L 400 420" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="users" data-edge-to="spa" data-edge-label="HTTPS" data-edge-key="0" data-edge-id="capture" data-composition-points="85,92;85,116;104,116;104,171;88,171;88,195" d="M 85 92 L 85 108 Q 85 116 93 116 L 96 116 Q 104 116 104 124 L 104 163 Q 104 171 96 171 L 96 171 Q 88 171 88 179 L 88 195" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="spa" data-edge-to="api" data-edge-label="POST /bills/scan" data-edge-key="1" data-edge-id="scan-post" data-composition-points="136,223;225,223" d="M 136 223 L 225 223" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="api" data-edge-to="auth" data-edge-label="session lookup" data-edge-key="2" data-edge-id="session-lookup" data-composition-points="315,223;410,223" d="M 315 223 L 410 223" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="auth" data-edge-to="ingest" data-edge-label="401 anonymous" data-edge-key="3" data-edge-id="gate-open" data-composition-points="500,223;595,223" d="M 500 223 L 595 223" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="auth" data-edge-to="idp" data-edge-label="OAuth 2.0 redirect" data-edge-key="4" data-edge-id="oauth-redirect" data-composition-points="455,195;455,92" d="M 455 195 L 455 92" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        <path data-edge-from="ingest" data-edge-to="extract" data-edge-label="base64 JPEG" data-edge-key="5" data-edge-id="image-bytes" data-composition-points="685,223;780,223" d="M 685 223 L 780 223" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="extract" data-edge-to="gemini" data-edge-label="primary extraction" data-edge-key="6" data-edge-id="primary-extraction" data-composition-points="825.5,195;825.5,143.5;612.5,143.5;612.5,92" d="M 825.5 195 L 825.5 151.5 Q 825.5 143.5 817.5 143.5 L 620.5 143.5 Q 612.5 143.5 612.5 135.5 L 612.5 92" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="extract" data-edge-to="ollama" data-edge-label="fallback on failure" data-edge-key="7" data-edge-id="fallback-extraction" data-composition-points="832.5,251;832.5,275;851,275;851,331;835,331;835,355" d="M 832.5 251 L 832.5 267 Q 832.5 275 840.5 275 L 843 275 Q 851 275 851 283 L 851 323 Q 851 331 843 331 L 843 331 Q 835 331 835 339 L 835 355" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="extract" data-edge-to="media" data-edge-label="image upload" data-edge-key="8" data-edge-id="image-cdn" data-composition-points="839.5,195;839.5,143.5;1015,143.5;1015,92" d="M 839.5 195 L 839.5 151.5 Q 839.5 143.5 847.5 143.5 L 1007 143.5 Q 1015 143.5 1015 135.5 L 1015 92" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="extract" data-edge-to="mongo" data-edge-label="bill document" data-edge-key="9" data-edge-id="persist" data-composition-points="885,223;980,223" d="M 885 223 L 980 223" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="api" data-edge-to="otel" data-edge-label="scrape /metrics" data-edge-key="10" data-edge-id="telemetry" data-composition-points="270,251;270,275;301,275;301,331;285,331;285,355" d="M 270 251 L 270 267 Q 270 275 278 275 L 293 275 Q 301 275 301 283 L 301 323 Q 301 331 293 331 L 293 331 Q 285 331 285 339 L 285 355" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
 
         <!-- Components -->
-        <g id="node-spa" data-node-id="spa" data-node-label="Bill Tracker SPA" tabindex="0" role="button" aria-label="Focus Bill Tracker SPA, React 19 + Vite, Untrusted client device" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="React 19 + Vite" data-node-tag="untrusted input" data-node-context="Untrusted client device">
-          <title>Bill Tracker SPA · React 19 + Vite · Untrusted client device · untrusted input</title>
-          <rect x="40" y="210" width="116" height="66" rx="6" class="c-mask"/>
-          <rect x="40" y="210" width="116" height="66" rx="6" class="c-frontend" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="frontend" class="semantic-sigil s-frontend" transform="translate(46 216) scale(0.6875)">
+        <g id="node-users" data-node-id="users" data-node-label="Users" tabindex="0" role="button" aria-label="Focus Users, Browser · camera, Untrusted Client Network" aria-pressed="false" data-node-kind="external" data-node-sublabel="Browser · camera" data-node-context="Untrusted Client Network">
+          <title>Users · Browser · camera · Untrusted Client Network</title>
+          <rect x="40" y="40" width="90" height="52" rx="6" class="c-mask"/>
+          <rect x="40" y="40" width="90" height="52" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 46) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="85" y="64" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Users</text>
+        <text data-detail="context" x="85" y="80" class="t-muted" font-size="8.5" text-anchor="middle">Browser · camera</text>
+        </g>
+
+        <g id="node-spa" data-node-id="spa" data-node-label="React SPA" tabindex="0" role="button" aria-label="Focus React SPA, Vite · Router, Client Tier · Vercel Static Edge, React" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="Vite · Router" data-node-tag="Vercel static" data-node-context="Client Tier · Vercel Static Edge" data-node-brand="React" data-node-brand-id="react" data-node-brand-status="preset" data-node-brand-source="https://github.com/facebook/create-react-app/blob/282c03f9525fdf8061ffa1ec50dce89296d916bd/test/fixtures/relative-paths/src/logo.svg">
+          <title>React SPA · Vite · Router · Client Tier · Vercel Static Edge · Vercel static · React</title>
+          <rect x="40" y="195" width="96" height="56" rx="6" class="c-mask"/>
+          <rect x="40" y="195" width="96" height="56" rx="6" class="c-frontend" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="frontend" class="semantic-sigil s-frontend" transform="translate(46 201) scale(0.6875)">
             <rect x="2" y="3" width="12" height="10" rx="2"/>
             <path d="M2 6.5h12"/>
             <circle cx="4.1" cy="4.8" r=".7" class="sigil-fill"/>
             <circle cx="6.3" cy="4.8" r=".7" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="98" y="241" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Bill Tracker SPA</text>
-        <text data-detail="context" x="98" y="257" class="t-muted" font-size="9" text-anchor="middle">React 19 + Vite</text>
-        <text data-detail="fine" x="98" y="268" class="t-frontend" font-size="7" text-anchor="middle">untrusted input</text>
+          <g aria-hidden="true" data-brand-mark="react" data-brand-title="React" data-brand-status="preset" data-brand-source="https://github.com/facebook/create-react-app/blob/282c03f9525fdf8061ffa1ec50dce89296d916bd/test/fixtures/relative-paths/src/logo.svg" class="brand-mark" transform="translate(114 201)">
+            <rect width="16" height="16" rx="4" class="brand-mark-badge"/>
+            <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z" transform="translate(3 3) scale(0.4166666666666667)" fill="#61DAFB"/>
+            <rect width="16" height="16" rx="4" class="brand-mark-frame"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="88" y="221" class="t-primary" font-size="8" font-weight="600" text-anchor="middle">React SPA</text>
+        <text data-detail="context" x="88" y="237" class="t-muted" font-size="9" text-anchor="middle">Vite · Router</text>
+        <text data-detail="fine" x="88" y="243" class="t-frontend" font-size="7" text-anchor="middle">Vercel static</text>
         </g>
 
-        <g id="node-edge" data-node-id="edge" data-node-label="Edge &amp; Auth Gate" tabindex="0" role="button" aria-label="Focus Edge &amp; Auth Gate, Express 5 :3000, Express API :3000 - CORS edge, public /uploads, session-gated routes" aria-pressed="false" data-node-kind="security" data-node-sublabel="Express 5 :3000" data-node-tag="CORS + session" data-node-context="Express API :3000 - CORS edge, public /uploads, session-gated routes">
-          <title>Edge &amp; Auth Gate · Express 5 :3000 · Express API :3000 - CORS edge, public /uploads, session-gated routes · CORS + session</title>
-          <rect x="296" y="210" width="116" height="66" rx="6" class="c-mask"/>
-          <rect x="296" y="210" width="116" height="66" rx="6" class="c-security" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(302 216) scale(0.6875)">
+        <g id="node-api" data-node-id="api" data-node-label="Express API" tabindex="0" role="button" aria-label="Focus Express API, :3000 /api, Application Trust Boundary · CORS allowlist + httpOnly session cookie" aria-pressed="false" data-node-kind="backend" data-node-sublabel=":3000 /api" data-node-context="Application Trust Boundary · CORS allowlist + httpOnly session cookie">
+          <title>Express API · :3000 /api · Application Trust Boundary · CORS allowlist + httpOnly session cookie</title>
+          <rect x="225" y="195" width="90" height="56" rx="6" class="c-mask"/>
+          <rect x="225" y="195" width="90" height="56" rx="6" class="c-backend" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(231 201) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="270" y="221" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Express API</text>
+        <text data-detail="context" x="270" y="237" class="t-muted" font-size="9" text-anchor="middle">:3000 /api</text>
+        </g>
+
+        <g id="node-auth" data-node-id="auth" data-node-label="Session Gate" tabindex="0" role="button" aria-label="Focus Session Gate, Passport store, Application Trust Boundary · CORS allowlist + httpOnly session cookie" aria-pressed="false" data-node-kind="security" data-node-sublabel="Passport store" data-node-tag="401 anon" data-node-context="Application Trust Boundary · CORS allowlist + httpOnly session cookie">
+          <title>Session Gate · Passport store · Application Trust Boundary · CORS allowlist + httpOnly session cookie · 401 anon</title>
+          <rect x="410" y="195" width="90" height="56" rx="6" class="c-mask"/>
+          <rect x="410" y="195" width="90" height="56" rx="6" class="c-security" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(416 201) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="354" y="241" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Edge &amp; Auth Gate</text>
-        <text data-detail="context" x="354" y="257" class="t-muted" font-size="9" text-anchor="middle">Express 5 :3000</text>
-        <text data-detail="fine" x="354" y="268" class="t-security" font-size="7" text-anchor="middle">CORS + session</text>
+          <text data-node-label="" data-detail-anchor="" x="455" y="221" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Session Gate</text>
+        <text data-detail="context" x="455" y="237" class="t-muted" font-size="9" text-anchor="middle">Passport store</text>
+        <text data-detail="fine" x="455" y="243" class="t-security" font-size="7" text-anchor="middle">401 anon</text>
         </g>
 
-        <g id="node-api" data-node-id="api" data-node-label="Bill API + Upload" tabindex="0" role="button" aria-label="Focus Bill API + Upload, /api/bills/scan, Express API :3000 - CORS edge, public /uploads, session-gated routes" aria-pressed="false" data-node-kind="backend" data-node-sublabel="/api/bills/scan" data-node-tag="multer + controller" data-node-context="Express API :3000 - CORS edge, public /uploads, session-gated routes">
-          <title>Bill API + Upload · /api/bills/scan · Express API :3000 - CORS edge, public /uploads, session-gated routes · multer + controller</title>
-          <rect x="544" y="210" width="150" height="66" rx="6" class="c-mask"/>
-          <rect x="544" y="210" width="150" height="66" rx="6" class="c-backend" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(550 216) scale(0.6875)">
+        <g id="node-ingest" data-node-id="ingest" data-node-label="Multipart" tabindex="0" role="button" aria-label="Focus Multipart, Multer 10 MB, Application Trust Boundary · CORS allowlist + httpOnly session cookie" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Multer 10 MB" data-node-tag="ext only" data-node-context="Application Trust Boundary · CORS allowlist + httpOnly session cookie">
+          <title>Multipart · Multer 10 MB · Application Trust Boundary · CORS allowlist + httpOnly session cookie · ext only</title>
+          <rect x="595" y="195" width="90" height="56" rx="6" class="c-mask"/>
+          <rect x="595" y="195" width="90" height="56" rx="6" class="c-backend" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(601 201) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="619" y="241" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Bill API + Upload</text>
-        <text data-detail="context" x="619" y="257" class="t-muted" font-size="9" text-anchor="middle">/api/bills/scan</text>
-        <text data-detail="fine" x="619" y="268" class="t-backend" font-size="7" text-anchor="middle">multer + controller</text>
+          <text data-node-label="" data-detail-anchor="" x="640" y="221" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Multipart</text>
+        <text data-detail="context" x="640" y="237" class="t-muted" font-size="9" text-anchor="middle">Multer 10 MB</text>
+        <text data-detail="fine" x="640" y="243" class="t-backend" font-size="7" text-anchor="middle">ext only</text>
         </g>
 
-        <g id="node-service" data-node-id="service" data-node-label="Bill Service" tabindex="0" role="button" aria-label="Focus Bill Service, sanitize + enrich, Express API :3000 - CORS edge, public /uploads, session-gated routes" aria-pressed="false" data-node-kind="backend" data-node-sublabel="sanitize + enrich" data-node-tag="no queue" data-node-context="Express API :3000 - CORS edge, public /uploads, session-gated routes">
-          <title>Bill Service · sanitize + enrich · Express API :3000 - CORS edge, public /uploads, session-gated routes · no queue</title>
-          <rect x="826" y="210" width="132" height="66" rx="6" class="c-mask"/>
-          <rect x="826" y="210" width="132" height="66" rx="6" class="c-backend" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(832 216) scale(0.6875)">
+        <g id="node-extract" data-node-id="extract" data-node-label="AI Extractor" tabindex="0" role="button" aria-label="Focus AI Extractor, sanitize · warranty, Application Trust Boundary · CORS allowlist + httpOnly session cookie" aria-pressed="false" data-node-kind="backend" data-node-sublabel="sanitize · warranty" data-node-tag="Gemini → Llava" data-node-context="Application Trust Boundary · CORS allowlist + httpOnly session cookie">
+          <title>AI Extractor · sanitize · warranty · Application Trust Boundary · CORS allowlist + httpOnly session cookie · Gemini → Llava</title>
+          <rect x="780" y="195" width="105" height="56" rx="6" class="c-mask"/>
+          <rect x="780" y="195" width="105" height="56" rx="6" class="c-backend" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(786 201) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="892" y="241" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Bill Service</text>
-        <text data-detail="context" x="892" y="257" class="t-muted" font-size="9" text-anchor="middle">sanitize + enrich</text>
-        <text data-detail="fine" x="892" y="268" class="t-backend" font-size="7" text-anchor="middle">no queue</text>
+          <text data-node-label="" data-detail-anchor="" x="832.5" y="221" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AI Extractor</text>
+        <text data-detail="context" x="832.5" y="237" class="t-muted" font-size="8.5" text-anchor="middle">sanitize · warranty</text>
+        <text data-detail="fine" x="832.5" y="243" class="t-backend" font-size="7" text-anchor="middle">Gemini → Llava</text>
         </g>
 
-        <g id="node-identity" data-node-id="identity" data-node-label="OAuth + Gmail" tabindex="0" role="button" aria-label="Focus OAuth + Gmail, Google/Facebook/Discord, Identity providers" aria-pressed="false" data-node-kind="external" data-node-sublabel="Google/Facebook/Discord" data-node-tag="OTP over SMTP" data-node-context="Identity providers">
-          <title>OAuth + Gmail · Google/Facebook/Discord · Identity providers · OTP over SMTP</title>
-          <rect x="700" y="70" width="150" height="66" rx="6" class="c-mask"/>
-          <rect x="700" y="70" width="150" height="66" rx="6" class="c-external" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(706 76) scale(0.6875)">
-            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
-            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="775" y="101" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">OAuth + Gmail</text>
-        <text data-detail="context" x="775" y="117" class="t-muted" font-size="9" text-anchor="middle">Google/Facebook/Discord</text>
-        <text data-detail="fine" x="775" y="128" class="t-external" font-size="7" text-anchor="middle">OTP over SMTP</text>
-        </g>
-
-        <g id="node-extractor" data-node-id="extractor" data-node-label="Google Gemini" tabindex="0" role="button" aria-label="Focus Google Gemini, vision OCR, Third-party SaaS egress" aria-pressed="false" data-node-kind="external" data-node-sublabel="vision OCR" data-node-tag="fallback llava" data-node-context="Third-party SaaS egress">
-          <title>Google Gemini · vision OCR · Third-party SaaS egress · fallback llava</title>
-          <rect x="700" y="420" width="150" height="66" rx="6" class="c-mask"/>
-          <rect x="700" y="420" width="150" height="66" rx="6" class="c-external" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(706 426) scale(0.6875)">
-            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
-            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="775" y="451" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Google Gemini</text>
-        <text data-detail="context" x="775" y="467" class="t-muted" font-size="9" text-anchor="middle">vision OCR</text>
-        <text data-detail="fine" x="775" y="478" class="t-external" font-size="7" text-anchor="middle">fallback llava</text>
-        </g>
-
-        <g id="node-cdn" data-node-id="cdn" data-node-label="Cloudinary" tabindex="0" role="button" aria-label="Focus Cloudinary, image CDN, Third-party SaaS egress" aria-pressed="false" data-node-kind="external" data-node-sublabel="image CDN" data-node-tag="bill-tracker folder" data-node-context="Third-party SaaS egress">
-          <title>Cloudinary · image CDN · Third-party SaaS egress · bill-tracker folder</title>
-          <rect x="900" y="420" width="150" height="66" rx="6" class="c-mask"/>
-          <rect x="900" y="420" width="150" height="66" rx="6" class="c-external" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(906 426) scale(0.6875)">
-            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
-            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="975" y="451" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Cloudinary</text>
-        <text data-detail="context" x="975" y="467" class="t-muted" font-size="9" text-anchor="middle">image CDN</text>
-        <text data-detail="fine" x="975" y="478" class="t-external" font-size="7" text-anchor="middle">bill-tracker folder</text>
-        </g>
-
-        <g id="node-atlas" data-node-id="atlas" data-node-label="MongoDB Atlas" tabindex="0" role="button" aria-label="Focus MongoDB Atlas, bills + users, Third-party SaaS egress" aria-pressed="false" data-node-kind="database" data-node-sublabel="bills + users" data-node-context="Third-party SaaS egress">
-          <title>MongoDB Atlas · bills + users · Third-party SaaS egress</title>
-          <rect x="1100" y="420" width="150" height="66" rx="6" class="c-mask"/>
-          <rect x="1100" y="420" width="150" height="66" rx="6" class="c-database" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1106 426) scale(0.6875)">
+        <g id="node-mongo" data-node-id="mongo" data-node-label="MongoDB" tabindex="0" role="button" aria-label="Focus MongoDB, billTracker, Data Tier, MongoDB" aria-pressed="false" data-node-kind="database" data-node-sublabel="billTracker" data-node-tag="User + Bill" data-node-context="Data Tier" data-node-brand="MongoDB" data-node-brand-id="mongodb" data-node-brand-status="preset" data-node-brand-source="https://www.mongodb.com/pressroom">
+          <title>MongoDB · billTracker · Data Tier · User + Bill · MongoDB</title>
+          <rect x="980" y="195" width="90" height="56" rx="6" class="c-mask"/>
+          <rect x="980" y="195" width="90" height="56" rx="6" class="c-database" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(986 201) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1175" y="451" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MongoDB Atlas</text>
-        <text data-detail="context" x="1175" y="467" class="t-muted" font-size="9" text-anchor="middle">bills + users</text>
+          <g aria-hidden="true" data-brand-mark="mongodb" data-brand-title="MongoDB" data-brand-status="preset" data-brand-source="https://www.mongodb.com/pressroom" class="brand-mark" transform="translate(1048 201)">
+            <rect width="16" height="16" rx="4" class="brand-mark-badge"/>
+            <path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z" transform="translate(3 3) scale(0.4166666666666667)" fill="#47A248"/>
+            <rect width="16" height="16" rx="4" class="brand-mark-frame"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="1025" y="221" class="t-primary" font-size="8" font-weight="600" text-anchor="middle">MongoDB</text>
+        <text data-detail="context" x="1025" y="237" class="t-muted" font-size="9" text-anchor="middle">billTracker</text>
+        <text data-detail="fine" x="1025" y="243" class="t-database" font-size="7" text-anchor="middle">User + Bill</text>
         </g>
 
-        <g id="node-observability" data-node-id="observability" data-node-label="Observability Stack" tabindex="0" role="button" aria-label="Focus Observability Stack, Prometheus / Loki / Grafana, Observability plane" aria-pressed="false" data-node-kind="external" data-node-sublabel="Prometheus / Loki / Grafana" data-node-tag="docker compose" data-node-context="Observability plane">
-          <title>Observability Stack · Prometheus / Loki / Grafana · Observability plane · docker compose</title>
-          <rect x="300" y="420" width="200" height="66" rx="6" class="c-mask"/>
-          <rect x="300" y="420" width="200" height="66" rx="6" class="c-external" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(306 426) scale(0.6875)">
+        <g id="node-idp" data-node-id="idp" data-node-label="OAuth Providers" tabindex="0" role="button" aria-label="Focus OAuth Providers, Google · FB · Discord, Third-Party SaaS · bill data leaves the boundary" aria-pressed="false" data-node-kind="external" data-node-sublabel="Google · FB · Discord" data-node-context="Third-Party SaaS · bill data leaves the boundary">
+          <title>OAuth Providers · Google · FB · Discord · Third-Party SaaS · bill data leaves the boundary</title>
+          <rect x="395" y="40" width="120" height="52" rx="6" class="c-mask"/>
+          <rect x="395" y="40" width="120" height="52" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(401 46) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="400" y="451" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Observability Stack</text>
-        <text data-detail="context" x="400" y="467" class="t-muted" font-size="9" text-anchor="middle">Prometheus / Loki / Grafana</text>
-        <text data-detail="fine" x="400" y="478" class="t-external" font-size="7" text-anchor="middle">docker compose</text>
+          <text data-node-label="" data-detail-anchor="" x="455" y="64" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">OAuth Providers</text>
+        <text data-detail="context" x="455" y="80" class="t-muted" font-size="8.8" text-anchor="middle">Google · FB · Discord</text>
+        </g>
+
+        <g id="node-gemini" data-node-id="gemini" data-node-label="Gemini API" tabindex="0" role="button" aria-label="Focus Gemini API, flash-lite vision, Third-Party SaaS · bill data leaves the boundary, Google Gemini" aria-pressed="false" data-node-kind="external" data-node-sublabel="flash-lite vision" data-node-context="Third-Party SaaS · bill data leaves the boundary" data-node-brand="Google Gemini" data-node-brand-id="google-gemini" data-node-brand-status="preset" data-node-brand-source="https://gemini.google.com">
+          <title>Gemini API · flash-lite vision · Third-Party SaaS · bill data leaves the boundary · Google Gemini</title>
+          <rect x="560" y="40" width="105" height="52" rx="6" class="c-mask"/>
+          <rect x="560" y="40" width="105" height="52" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(566 46) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <g aria-hidden="true" data-brand-mark="google-gemini" data-brand-title="Google Gemini" data-brand-status="preset" data-brand-source="https://gemini.google.com" class="brand-mark" transform="translate(643 46)">
+            <rect width="16" height="16" rx="4" class="brand-mark-badge"/>
+            <path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81" transform="translate(3 3) scale(0.4166666666666667)" fill="#8E75B2"/>
+            <rect width="16" height="16" rx="4" class="brand-mark-frame"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="612.5" y="64" class="t-primary" font-size="8.1" font-weight="600" text-anchor="middle">Gemini API</text>
+        <text data-detail="context" x="612.5" y="80" class="t-muted" font-size="9" text-anchor="middle">flash-lite vision</text>
+        </g>
+
+        <g id="node-media" data-node-id="media" data-node-label="Cloudinary" tabindex="0" role="button" aria-label="Focus Cloudinary, bill-tracker CDN, Third-Party SaaS · bill data leaves the boundary, Cloudinary" aria-pressed="false" data-node-kind="cloud" data-node-sublabel="bill-tracker CDN" data-node-tag="disk fallback" data-node-context="Third-Party SaaS · bill data leaves the boundary" data-node-brand="Cloudinary" data-node-brand-id="cloudinary" data-node-brand-status="preset" data-node-brand-source="https://cloudinary.com">
+          <title>Cloudinary · bill-tracker CDN · Third-Party SaaS · bill data leaves the boundary · disk fallback · Cloudinary</title>
+          <rect x="965" y="40" width="100" height="52" rx="6" class="c-mask"/>
+          <rect x="965" y="40" width="100" height="52" rx="6" class="c-cloud" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="cloud" class="semantic-sigil s-cloud" transform="translate(971 46) scale(0.6875)">
+            <path d="M4.3 12.5h7.3a2.4 2.4 0 0 0 .2-4.8 4 4 0 0 0-7.5-1.3A3.1 3.1 0 0 0 4.3 12.5Z"/>
+          </g>
+          <g aria-hidden="true" data-brand-mark="cloudinary" data-brand-title="Cloudinary" data-brand-status="preset" data-brand-source="https://cloudinary.com" class="brand-mark" transform="translate(1043 46)">
+            <rect width="16" height="16" rx="4" class="brand-mark-badge"/>
+            <path d="M24 14.8598c0 2.1729-1.3757 3.974-3.5903 4.6996l-.0995.0318V17.989c1.3777-.5805 2.1869-1.7275 2.1869-3.1291-.0072-2-1.6087-3.6288-3.6082-3.6699h-.5964l-.1432-.5686c-.7025-2.8996-3.2886-4.9489-6.2721-4.97a6.3915 6.3915 0 0 0-5.811 3.664l-.1828.3757-.4175.0437a4.4311 4.4311 0 0 0-3.3052 2.088c-1.2803 2.0856-.6274 4.8143 1.4583 6.0947v1.6897h-.01l-.149-.0675a5.9402 5.9402 0 0 1-3.3658-4.3494c-.5787-3.2291 1.57-6.3161 4.7991-6.8948a7.8766 7.8766 0 0 1 6.9839-4.149c3.4724.025 6.535 2.28 7.5901 5.5883 2.5789.3366 4.5138 2.5245 4.5327 5.1251zm-15.3176-1.322h.5647a.0656.0656 0 0 0 .0457-.1113L7.084 11.2158l-.0007-.0007a.0656.0656 0 0 0-.0927.0007L4.78 13.4265a.0656.0656 0 0 0 .0477.1113h.5566a.0656.0656 0 0 1 .0657.0656v5.0574c0 .6588.534 1.1928 1.1928 1.1928H9.247a.0656.0656 0 0 0 .0457-.1113l-.33-.33a1.1928 1.1928 0 0 1-.348-.839v-4.97a.0676.0676 0 0 1 .0676-.0655zm9.769 2.5466h.5667a.0655.0655 0 0 0 .0457-.1133l-2.2107-2.2087-.0015-.0015a.0636.0636 0 0 0-.0899.0015L14.551 15.971a.0657.0657 0 0 0 .0457.1133h.5567a.0656.0656 0 0 1 .0656.0656v2.5108c0 .6588.534 1.1928 1.1928 1.1928h2.6063a.0655.0655 0 0 0 .0457-.1113l-.33-.33a1.1928 1.1928 0 0 1-.348-.839V16.15a.0656.0656 0 0 1 .0657-.0656zm-4.8844-1.2743h.5646a.0656.0656 0 0 0 .0477-.1114l-2.2107-2.2027-.0006-.0006a.0656.0656 0 0 0-.0928.0006l-2.2087 2.2068a.0656.0656 0 0 0 .0457.1113h.5626a.0676.0676 0 0 1 .0657.0676v3.7791c0 .6588.534 1.1928 1.1928 1.1928h2.5983a.0656.0656 0 0 0 .0477-.1113l-.332-.33a1.193 1.193 0 0 1-.346-.839v-3.6956c0-.0366.0291-.0665.0657-.0676z" transform="translate(3 3) scale(0.4166666666666667)" fill="#3448C5"/>
+            <rect width="16" height="16" rx="4" class="brand-mark-frame"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="1015" y="64" class="t-primary" font-size="8" font-weight="600" text-anchor="middle">Cloudinary</text>
+        <text data-detail="context" x="1015" y="80" class="t-muted" font-size="9" text-anchor="middle">bill-tracker CDN</text>
+        <text data-detail="fine" x="1015" y="84" class="t-cloud" font-size="7" text-anchor="middle">disk fallback</text>
+        </g>
+
+        <g id="node-ollama" data-node-id="ollama" data-node-label="Ollama · Llava" tabindex="0" role="button" aria-label="Focus Ollama · Llava, 127.0.0.1:11434, Host-Local Services" aria-pressed="false" data-node-kind="external" data-node-sublabel="127.0.0.1:11434" data-node-tag="host-local" data-node-context="Host-Local Services">
+          <title>Ollama · Llava · 127.0.0.1:11434 · Host-Local Services · host-local</title>
+          <rect x="775" y="355" width="120" height="52" rx="6" class="c-mask"/>
+          <rect x="775" y="355" width="120" height="52" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(781 361) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="835" y="379" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Ollama · Llava</text>
+        <text data-detail="context" x="835" y="395" class="t-muted" font-size="9" text-anchor="middle">127.0.0.1:11434</text>
+        <text data-detail="fine" x="835" y="399" class="t-external" font-size="7" text-anchor="middle">host-local</text>
+        </g>
+
+        <g id="node-otel" data-node-id="otel" data-node-label="Prometheus" tabindex="0" role="button" aria-label="Focus Prometheus, Loki · Grafana :3001, Observability Plane, Prometheus" aria-pressed="false" data-node-kind="cloud" data-node-sublabel="Loki · Grafana :3001" data-node-tag="scrape 15s" data-node-context="Observability Plane" data-node-brand="Prometheus" data-node-brand-id="prometheus" data-node-brand-status="preset" data-node-brand-source="https://prometheus.io">
+          <title>Prometheus · Loki · Grafana :3001 · Observability Plane · scrape 15s · Prometheus</title>
+          <rect x="225" y="355" width="120" height="52" rx="6" class="c-mask"/>
+          <rect x="225" y="355" width="120" height="52" rx="6" class="c-cloud" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="cloud" class="semantic-sigil s-cloud" transform="translate(231 361) scale(0.6875)">
+            <path d="M4.3 12.5h7.3a2.4 2.4 0 0 0 .2-4.8 4 4 0 0 0-7.5-1.3A3.1 3.1 0 0 0 4.3 12.5Z"/>
+          </g>
+          <g aria-hidden="true" data-brand-mark="prometheus" data-brand-title="Prometheus" data-brand-status="preset" data-brand-source="https://prometheus.io" class="brand-mark" transform="translate(323 361)">
+            <rect width="16" height="16" rx="4" class="brand-mark-badge"/>
+            <path d="M12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.628-5.373-12-12-12zm0 22.46c-1.885 0-3.414-1.26-3.414-2.814h6.828c0 1.553-1.528 2.813-3.414 2.813zm5.64-3.745H6.36v-2.046h11.28v2.046zm-.04-3.098H6.391c-.037-.043-.075-.086-.111-.13-1.155-1.401-1.427-2.133-1.69-2.879-.005-.025 1.4.287 2.395.511 0 0 .513.119 1.262.255-.72-.843-1.147-1.915-1.147-3.01 0-2.406 1.845-4.508 1.18-6.207.648.053 1.34 1.367 1.387 3.422.689-.951.977-2.69.977-3.755 0-1.103.727-2.385 1.454-2.429-.648 1.069.168 1.984.894 4.256.272.854.237 2.29.447 3.201.07-1.892.395-4.652 1.595-5.605-.529 1.2.079 2.702.494 3.424.671 1.164 1.078 2.047 1.078 3.716a4.642 4.642 0 01-1.11 2.996c.792-.149 1.34-.283 1.34-.283l2.573-.502s-.374 1.538-1.81 3.019z" transform="translate(3 3) scale(0.4166666666666667)" fill="#E6522C"/>
+            <rect width="16" height="16" rx="4" class="brand-mark-frame"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="285" y="379" class="t-primary" font-size="10.6" font-weight="600" text-anchor="middle">Prometheus</text>
+        <text data-detail="context" x="285" y="395" class="t-muted" font-size="9" text-anchor="middle">Loki · Grafana :3001</text>
+        <text data-detail="fine" x="285" y="399" class="t-cloud" font-size="7" text-anchor="middle">scrape 15s</text>
         </g>
 
         <!-- Connection labels -->
-        <g data-detail="context" data-edge-from="spa" data-edge-to="edge" data-edge-label="POST /api/bills/scan" data-edge-key="0">
-          <rect x="173" y="223" width="106" height="14" rx="3" class="c-mask"/>
-          <text x="226" y="233" class="t-backend" font-size="8" text-anchor="middle">POST /api/bills/scan</text>
+        <g data-detail="context" data-edge-from="users" data-edge-to="spa" data-edge-label="HTTPS" data-edge-key="0" data-edge-id="capture">
+          <rect x="77.5" y="136" width="34" height="14" rx="3" class="c-mask"/>
+          <text x="94.5" y="146" class="t-backend" font-size="8" text-anchor="middle">HTTPS</text>
         </g>
-        <g data-detail="context" data-edge-from="edge" data-edge-to="api" data-edge-label="passport session gate" data-edge-key="1">
-          <rect x="422.6" y="223" width="110.8" height="14" rx="3" class="c-mask"/>
-          <text x="478" y="233" class="t-backend" font-size="8" text-anchor="middle">passport session gate</text>
+        <g data-detail="context" data-edge-from="spa" data-edge-to="api" data-edge-label="POST /bills/scan" data-edge-key="1" data-edge-id="scan-post">
+          <rect x="137.1" y="203" width="86.8" height="14" rx="3" class="c-mask"/>
+          <text x="180.5" y="213" class="t-backend" font-size="8" text-anchor="middle">POST /bills/scan</text>
         </g>
-        <g data-detail="context" data-edge-from="api" data-edge-to="service" data-edge-label="temp file path" data-edge-key="2">
-          <rect x="721.4" y="223" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="760" y="233" class="t-backend" font-size="8" text-anchor="middle">temp file path</text>
+        <g data-detail="context" data-edge-from="api" data-edge-to="auth" data-edge-label="session lookup" data-edge-key="2" data-edge-id="session-lookup">
+          <rect x="323.9" y="203" width="77.2" height="14" rx="3" class="c-mask"/>
+          <text x="362.5" y="213" class="t-backend" font-size="8" text-anchor="middle">session lookup</text>
         </g>
-        <g data-detail="context" data-edge-from="service" data-edge-to="extractor" data-edge-label="base64 image to LLM" data-edge-key="3">
-          <rect x="769.4" y="345" width="101.2" height="14" rx="3" class="c-mask"/>
-          <text x="820" y="355" class="t-backend" font-size="8" text-anchor="middle">base64 image to LLM</text>
+        <g data-detail="context" data-edge-from="auth" data-edge-to="ingest" data-edge-label="401 anonymous" data-edge-key="3" data-edge-id="gate-open">
+          <rect x="511.3" y="203" width="72.4" height="14" rx="3" class="c-mask"/>
+          <text x="547.5" y="213" class="t-backend" font-size="8" text-anchor="middle">401 anonymous</text>
         </g>
-        <g data-detail="context" data-edge-from="service" data-edge-to="cdn" data-edge-label="image upload" data-edge-key="4">
-          <rect x="906.2" y="375" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="940" y="385" class="t-muted" font-size="8" text-anchor="middle">image upload</text>
+        <g data-detail="context" data-edge-from="auth" data-edge-to="idp" data-edge-label="OAuth 2.0 redirect" data-edge-key="4" data-edge-id="oauth-redirect">
+          <rect x="406.8" y="125" width="96.39999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="455" y="135" class="t-security" font-size="8" text-anchor="middle">OAuth 2.0 redirect</text>
         </g>
-        <g data-detail="context" data-edge-from="service" data-edge-to="atlas" data-edge-label="write bills + counter" data-edge-key="5">
-          <rect x="954.6" y="310" width="110.8" height="14" rx="3" class="c-mask"/>
-          <text x="1010" y="320" class="t-muted" font-size="8" text-anchor="middle">write bills + counter</text>
+        <g data-detail="context" data-edge-from="ingest" data-edge-to="extract" data-edge-label="base64 JPEG" data-edge-key="5" data-edge-id="image-bytes">
+          <rect x="701.1" y="203" width="62.8" height="14" rx="3" class="c-mask"/>
+          <text x="732.5" y="213" class="t-backend" font-size="8" text-anchor="middle">base64 JPEG</text>
         </g>
-        <g data-detail="context" data-edge-from="edge" data-edge-to="identity" data-edge-label="OAuth2 callback / email OTP" data-edge-key="6">
-          <rect x="457.2" y="93" width="139.6" height="14" rx="3" class="c-mask"/>
-          <text x="527" y="103" class="t-security" font-size="8" text-anchor="middle">OAuth2 callback / email OTP</text>
+        <g data-detail="context" data-edge-from="extract" data-edge-to="gemini" data-edge-label="primary extraction" data-edge-key="6" data-edge-id="primary-extraction">
+          <rect x="670.8" y="123.5" width="96.39999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="719" y="133.5" class="t-muted" font-size="8" text-anchor="middle">primary extraction</text>
         </g>
-        <g data-detail="context" data-edge-from="api" data-edge-to="observability" data-edge-label="GET /metrics + log push" data-edge-key="7">
-          <rect x="339.8" y="350" width="120.39999999999999" height="14" rx="3" class="c-mask"/>
-          <text x="400" y="360" class="t-messagebus" font-size="8" text-anchor="middle">GET /metrics + log push</text>
+        <g data-detail="context" data-edge-from="extract" data-edge-to="ollama" data-edge-label="fallback on failure" data-edge-key="7" data-edge-id="fallback-extraction">
+          <rect x="791.15" y="255" width="101.2" height="14" rx="3" class="c-mask"/>
+          <text x="841.75" y="265" class="t-messagebus" font-size="8" text-anchor="middle">fallback on failure</text>
+        </g>
+        <g data-detail="context" data-edge-from="extract" data-edge-to="media" data-edge-label="image upload" data-edge-key="8" data-edge-id="image-cdn">
+          <rect x="893.45" y="123.5" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="927.25" y="133.5" class="t-muted" font-size="8" text-anchor="middle">image upload</text>
+        </g>
+        <g data-detail="context" data-edge-from="extract" data-edge-to="mongo" data-edge-label="bill document" data-edge-key="9" data-edge-id="persist">
+          <rect x="896.3" y="203" width="72.4" height="14" rx="3" class="c-mask"/>
+          <text x="932.5" y="213" class="t-backend" font-size="8" text-anchor="middle">bill document</text>
+        </g>
+        <g data-detail="context" data-edge-from="api" data-edge-to="otel" data-edge-label="scrape /metrics" data-edge-key="10" data-edge-id="telemetry">
+          <rect x="244.5" y="255" width="82" height="14" rx="3" class="c-mask"/>
+          <text x="285.5" y="265" class="t-messagebus" font-size="8" text-anchor="middle">scrape /metrics</text>
         </g>
 
         <!-- Boundary labels (foreground masks keep routes out of titles) -->
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="region" data-composition-frame-label="Untrusted client device">
-          <rect data-graph-role="structural-frame-label-mask" x="28" y="190" width="134.2" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="32" y="203" class="t-cloud" font-size="9" font-weight="600">Untrusted client device</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="region" data-composition-frame-label="Untrusted Client Network">
+          <rect data-graph-role="structural-frame-label-mask" x="14" y="20" width="139.6" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="18" y="33" class="t-cloud" font-size="9" font-weight="600">Untrusted Client Network</text>
         </g>
 
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="1" data-composition-frame-kind="security-group" data-composition-frame-label="Express API :3000 - CORS edge, public /uploads, session-gated routes">
-          <rect data-graph-role="structural-frame-label-mask" x="282" y="190" width="377.2" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="286" y="203" class="t-security" font-size="9" font-weight="600">Express API :3000 - CORS edge, public /uploads, session-gated routes</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="1" data-composition-frame-kind="region" data-composition-frame-label="Client Tier · Vercel Static Edge">
+          <rect data-graph-role="structural-frame-label-mask" x="12.393538787096773" y="175" width="151.21292242580645" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="16.393538787096773" y="186.35483970967744" class="t-cloud" font-size="7.35483970967742" font-weight="600">Client Tier · Vercel Static Edge</text>
         </g>
 
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="2" data-composition-frame-kind="region" data-composition-frame-label="Identity providers">
-          <rect data-graph-role="structural-frame-label-mask" x="688" y="50" width="107.2" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="692" y="63" class="t-cloud" font-size="9" font-weight="600">Identity providers</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="2" data-composition-frame-kind="security-group" data-composition-frame-label="Application Trust Boundary · CORS allowlist + httpOnly session cookie">
+          <rect data-graph-role="structural-frame-label-mask" x="199" y="175" width="382.59999999999997" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="203" y="188" class="t-security" font-size="9" font-weight="600">Application Trust Boundary · CORS allowlist + httpOnly session cookie</text>
         </g>
 
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="3" data-composition-frame-kind="region" data-composition-frame-label="Third-party SaaS egress">
-          <rect data-graph-role="structural-frame-label-mask" x="684" y="400" width="134.2" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="688" y="413" class="t-cloud" font-size="9" font-weight="600">Third-party SaaS egress</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="3" data-composition-frame-kind="region" data-composition-frame-label="Third-Party SaaS · bill data leaves the boundary">
+          <rect data-graph-role="structural-frame-label-mask" x="369" y="20" width="269.2" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="373" y="33" class="t-cloud" font-size="9" font-weight="600">Third-Party SaaS · bill data leaves the boundary</text>
         </g>
 
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="4" data-composition-frame-kind="region" data-composition-frame-label="Observability plane">
-          <rect data-graph-role="structural-frame-label-mask" x="286" y="400" width="112.6" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="290" y="413" class="t-cloud" font-size="9" font-weight="600">Observability plane</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="4" data-composition-frame-kind="region" data-composition-frame-label="Host-Local Services">
+          <rect data-graph-role="structural-frame-label-mask" x="749" y="335" width="112.6" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="753" y="348" class="t-cloud" font-size="9" font-weight="600">Host-Local Services</text>
+        </g>
+
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="5" data-composition-frame-kind="region" data-composition-frame-label="Data Tier">
+          <rect data-graph-role="structural-frame-label-mask" x="954" y="175" width="58.6" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="958" y="188" class="t-cloud" font-size="9" font-weight="600">Data Tier</text>
+        </g>
+
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="6" data-composition-frame-kind="region" data-composition-frame-label="Observability Plane">
+          <rect data-graph-role="structural-frame-label-mask" x="199" y="335" width="112.6" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="203" y="348" class="t-cloud" font-size="9" font-weight="600">Observability Plane</text>
         </g>
 
         <!-- Legend -->
         <g data-legend="" data-legend-bridge="">
-          <text x="40" y="538" class="t-primary" font-size="12" font-weight="650">Legend</text>
-          <g data-legend-semantic-kind="frontend" data-legend-kind="frontend" data-legend-label="Frontend" data-legend-x="40" data-legend-baseline="558" data-legend-width="83">
-            <rect x="40" y="549" width="16" height="10" rx="2.5" class="c-frontend" stroke-width="1"/>
-            <text x="62" y="558" class="t-muted" font-size="10" font-weight="500">Frontend</text>
+          <text x="40" y="459" class="t-primary" font-size="12" font-weight="650">Legend</text>
+          <g data-legend-semantic-kind="frontend" data-legend-kind="frontend" data-legend-label="Frontend" data-legend-x="40" data-legend-baseline="479" data-legend-width="83">
+            <rect x="40" y="470" width="16" height="10" rx="2.5" class="c-frontend" stroke-width="1"/>
+            <text x="62" y="479" class="t-muted" font-size="10" font-weight="500">Frontend</text>
           </g>
-          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="145" data-legend-baseline="558" data-legend-width="78">
-            <rect x="145" y="549" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
-            <text x="167" y="558" class="t-muted" font-size="10" font-weight="500">Backend</text>
+          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="145" data-legend-baseline="479" data-legend-width="78">
+            <rect x="145" y="470" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
+            <text x="167" y="479" class="t-muted" font-size="10" font-weight="500">Backend</text>
           </g>
-          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="245" data-legend-baseline="558" data-legend-width="83">
-            <rect x="245" y="549" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
-            <text x="267" y="558" class="t-muted" font-size="10" font-weight="500">Database</text>
+          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="245" data-legend-baseline="479" data-legend-width="83">
+            <rect x="245" y="470" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
+            <text x="267" y="479" class="t-muted" font-size="10" font-weight="500">Database</text>
           </g>
-          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="Security" data-legend-x="350" data-legend-baseline="558" data-legend-width="83">
-            <rect x="350" y="549" width="16" height="10" rx="2.5" class="c-security" stroke-width="1"/>
-            <text x="372" y="558" class="t-muted" font-size="10" font-weight="500">Security</text>
+          <g data-legend-semantic-kind="cloud" data-legend-kind="cloud" data-legend-label="Cloud" data-legend-x="350" data-legend-baseline="479" data-legend-width="68">
+            <rect x="350" y="470" width="16" height="10" rx="2.5" class="c-cloud" stroke-width="1"/>
+            <text x="372" y="479" class="t-muted" font-size="10" font-weight="500">Cloud</text>
           </g>
-          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="External" data-legend-x="455" data-legend-baseline="558" data-legend-width="83">
-            <rect x="455" y="549" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
-            <text x="477" y="558" class="t-muted" font-size="10" font-weight="500">External</text>
+          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="Security" data-legend-x="440" data-legend-baseline="479" data-legend-width="83">
+            <rect x="440" y="470" width="16" height="10" rx="2.5" class="c-security" stroke-width="1"/>
+            <text x="462" y="479" class="t-muted" font-size="10" font-weight="500">Security</text>
+          </g>
+          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="External" data-legend-x="545" data-legend-baseline="479" data-legend-width="83">
+            <rect x="545" y="470" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
+            <text x="567" y="479" class="t-muted" font-size="10" font-weight="500">External</text>
           </g>
         </g>
       </svg>
@@ -5566,37 +5657,36 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="card">
         <div class="card-header">
           <div class="card-dot cyan"></div>
-          <h3>Primary path - scan one bill</h3>
+          <h3>Primary path · one bill scan</h3>
         </div>
         <ul>
-          <li>&bull; ScanBill.jsx:120 posts multipart billImage to POST /api/bills/scan with the connect.sid cookie (api.js:5).</li>
-          <li>&bull; upload.single() writes to backend/uploads; bill.service.js:43-45 then calls Gemini and Cloudinary in the same request.</li>
-          <li>&bull; No queue or 202: the browser waits out the LLM round trip, 5248 ms observed in combined.log.</li>
+          <li>&bull; ScanBill.jsx grabs a getUserMedia frame, then POSTs multipart billImage to /api/bills/scan</li>
+          <li>&bull; Multer caps at 10 MB and allowlists .jpg .jpeg .png .webp by extension only — no MIME check (upload.js:23)</li>
+          <li>&bull; sanitizeAndEnrichData normalises every AI field and sets warrantyStatus at a 30-day threshold</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="card-header">
-          <div class="card-dot rose"></div>
+          <div class="card-dot emerald"></div>
           <h3>Trust boundaries</h3>
         </div>
         <ul>
-          <li>&bull; app.js:31 pins CORS to one CLIENT_URL, but /api/health, /metrics and /uploads bypass the session gate.</li>
-          <li>&bull; /uploads mounts at app.js:45 before the session middleware, so every bill image on disk is world-readable.</li>
-          <li>&bull; upload.js:24 trusts the extension only, then forwards those bytes to Gemini and Cloudinary.</li>
+          <li>&bull; cors() is pinned to CLIENT_URL with httpOnly sameSite=lax cookies; authenticate() guards every bill route</li>
+          <li>&bull; Ownership is enforced in the query — findByIdAndUserId and deleteByIdAndUserId both match userId</li>
+          <li>&bull; Cloudinary egress is where bill images leave the boundary; without keys they stay in ./uploads</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="card-header">
-          <div class="card-dot violet"></div>
-          <h3>External dependencies, identity, runtime</h3>
+          <div class="card-dot amber"></div>
+          <h3>Dependencies and deployment</h3>
         </div>
         <ul>
-          <li>&bull; Gemini first (aiExtractor.js:132), Ollama llava second (:135), then throw - one attempt each, no retry.</li>
-          <li>&bull; Cloudinary 403s live, so imageProcessor.js:55 falls back to a hardcoded localhost URL.</li>
-          <li>&bull; Atlas holds bills, users and sessions; three OAuth providers plus Gmail carry the OTP.</li>
-          <li>&bull; api.js:4 hardcodes the base URL; no Redis, no client cache, Loki auth_enabled: false.</li>
+          <li>&bull; Strict two-step AI chain: Gemini first, host-local Ollama + Llava only on failure; both down throws</li>
+          <li>&bull; Gmail OTP and all three OAuth strategies fall back to stdout logging and dummy_* credentials</li>
+          <li>&bull; vercel.json rewrites /api/(.*) to backend/dist/api/index.js, which does not exist; there is no CI</li>
         </ul>
       </div>
     </div>

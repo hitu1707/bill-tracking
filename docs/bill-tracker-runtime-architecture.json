@@ -1,305 +1,91 @@
 {
-    "schema_version":  1,
-    "diagram_type":  "architecture",
-    "meta":  {
-                 "title":  "Bill Tracker Runtime Architecture",
-                 "output":  "bill-tracker-runtime-architecture.html",
-                 "quality_profile":  "showcase"
-             },
-    "components":  [
-                       {
-                           "id":  "spa",
-                           "type":  "frontend",
-                           "label":  "Bill Tracker SPA",
-                           "sublabel":  "React 19 + Vite",
-                           "tag":  "untrusted input",
-                           "pos":  [
-                                       40,
-                                       210
-                                   ],
-                           "size":  [
-                                        116,
-                                        66
-                                    ]
-                       },
-                       {
-                           "id":  "edge",
-                           "type":  "security",
-                           "label":  "Edge \u0026 Auth Gate",
-                           "sublabel":  "Express 5 :3000",
-                           "tag":  "CORS + session",
-                           "pos":  [
-                                       296,
-                                       210
-                                   ],
-                           "size":  [
-                                        116,
-                                        66
-                                    ]
-                       },
-                       {
-                           "id":  "api",
-                           "type":  "backend",
-                           "label":  "Bill API + Upload",
-                           "sublabel":  "/api/bills/scan",
-                           "tag":  "multer + controller",
-                           "pos":  [
-                                       544,
-                                       210
-                                   ],
-                           "size":  [
-                                        150,
-                                        66
-                                    ]
-                       },
-                       {
-                           "id":  "service",
-                           "type":  "backend",
-                           "label":  "Bill Service",
-                           "sublabel":  "sanitize + enrich",
-                           "tag":  "no queue",
-                           "pos":  [
-                                       826,
-                                       210
-                                   ],
-                           "size":  [
-                                        132,
-                                        66
-                                    ]
-                       },
-                       {
-                           "id":  "identity",
-                           "type":  "external",
-                           "label":  "OAuth + Gmail",
-                           "sublabel":  "Google/Facebook/Discord",
-                           "tag":  "OTP over SMTP",
-                           "pos":  [
-                                       700,
-                                       70
-                                   ],
-                           "size":  [
-                                        150,
-                                        66
-                                    ]
-                       },
-                       {
-                           "id":  "extractor",
-                           "type":  "external",
-                           "label":  "Google Gemini",
-                           "sublabel":  "vision OCR",
-                           "tag":  "fallback llava",
-                           "pos":  [
-                                       700,
-                                       420
-                                   ],
-                           "size":  [
-                                        150,
-                                        66
-                                    ]
-                       },
-                       {
-                           "id":  "cdn",
-                           "type":  "external",
-                           "label":  "Cloudinary",
-                           "sublabel":  "image CDN",
-                           "tag":  "bill-tracker folder",
-                           "pos":  [
-                                       900,
-                                       420
-                                   ],
-                           "size":  [
-                                        150,
-                                        66
-                                    ]
-                       },
-                       {
-                           "id":  "atlas",
-                           "type":  "database",
-                           "label":  "MongoDB Atlas",
-                           "sublabel":  "bills + users",
-                           "pos":  [
-                                       1100,
-                                       420
-                                   ],
-                           "size":  [
-                                        150,
-                                        66
-                                    ]
-                       },
-                       {
-                           "id":  "observability",
-                           "type":  "external",
-                           "label":  "Observability Stack",
-                           "sublabel":  "Prometheus / Loki / Grafana",
-                           "tag":  "docker compose",
-                           "pos":  [
-                                       300,
-                                       420
-                                   ],
-                           "size":  [
-                                        200,
-                                        66
-                                    ]
-                       }
-                   ],
-    "boundaries":  [
-                       {
-                           "kind":  "region",
-                           "label":  "Untrusted client device",
-                           "wraps":  [
-                                         "spa"
-                                     ],
-                           "pad":  16
-                       },
-                       {
-                           "kind":  "security-group",
-                           "label":  "Express API :3000 - CORS edge, public /uploads, session-gated routes",
-                           "wraps":  [
-                                         "edge",
-                                         "api",
-                                         "service"
-                                     ],
-                           "pad":  18
-                       },
-                       {
-                           "kind":  "region",
-                           "label":  "Identity providers",
-                           "wraps":  [
-                                         "identity"
-                                     ],
-                           "pad":  16
-                       },
-                       {
-                           "kind":  "region",
-                           "label":  "Third-party SaaS egress",
-                           "wraps":  [
-                                         "extractor",
-                                         "cdn",
-                                         "atlas"
-                                     ],
-                           "pad":  20
-                       },
-                       {
-                           "kind":  "region",
-                           "label":  "Observability plane",
-                           "wraps":  [
-                                         "observability"
-                                     ],
-                           "pad":  18
-                       }
-                   ],
-    "connections":  [
-                        {
-                            "from":  "spa",
-                            "to":  "edge",
-                            "label":  "POST /api/bills/scan",
-                            "variant":  "emphasis"
-                        },
-                        {
-                            "from":  "edge",
-                            "to":  "api",
-                            "label":  "passport session gate",
-                            "variant":  "emphasis"
-                        },
-                        {
-                            "from":  "api",
-                            "to":  "service",
-                            "label":  "temp file path",
-                            "variant":  "emphasis"
-                        },
-                        {
-                            "from":  "service",
-                            "to":  "extractor",
-                            "label":  "base64 image to LLM",
-                            "variant":  "emphasis",
-                            "fromSide":  "bottom",
-                            "toSide":  "top",
-                            "labelAt":  [
-                                            820,
-                                            355
-                                        ]
-                        },
-                        {
-                            "from":  "service",
-                            "to":  "cdn",
-                            "label":  "image upload",
-                            "fromSide":  "bottom",
-                            "toSide":  "top",
-                            "labelAt":  [
-                                            940,
-                                            385
-                                        ]
-                        },
-                        {
-                            "from":  "service",
-                            "to":  "atlas",
-                            "label":  "write bills + counter",
-                            "fromSide":  "right",
-                            "toSide":  "left",
-                            "labelAt":  [
-                                            1010,
-                                            320
-                                        ]
-                        },
-                        {
-                            "from":  "edge",
-                            "to":  "identity",
-                            "label":  "OAuth2 callback / email OTP",
-                            "variant":  "security",
-                            "fromSide":  "top",
-                            "toSide":  "left",
-                            "via":  [
-                                        [
-                                            354,
-                                            103
-                                        ]
-                                    ],
-                            "labelAt":  [
-                                            527,
-                                            103
-                                        ]
-                        },
-                        {
-                            "from":  "api",
-                            "to":  "observability",
-                            "label":  "GET /metrics + log push",
-                            "variant":  "dashed",
-                            "fromSide":  "bottom",
-                            "toSide":  "top",
-                            "labelAt":  [
-                                            400,
-                                            360
-                                        ]
-                        }
-                    ],
-    "cards":  [
-                  {
-                      "dot":  "cyan",
-                      "title":  "Primary path - scan one bill",
-                      "items":  [
-                                    "ScanBill.jsx:120 posts multipart billImage to POST /api/bills/scan with the connect.sid cookie (api.js:5).",
-                                    "upload.single() writes to backend/uploads; bill.service.js:43-45 then calls Gemini and Cloudinary in the same request.",
-                                    "No queue or 202: the browser waits out the LLM round trip, 5248 ms observed in combined.log."
-                                ]
-                  },
-                  {
-                      "dot":  "rose",
-                      "title":  "Trust boundaries",
-                      "items":  [
-                                    "app.js:31 pins CORS to one CLIENT_URL, but /api/health, /metrics and /uploads bypass the session gate.",
-                                    "/uploads mounts at app.js:45 before the session middleware, so every bill image on disk is world-readable.",
-                                    "upload.js:24 trusts the extension only, then forwards those bytes to Gemini and Cloudinary."
-                                ]
-                  },
-                  {
-                      "dot":  "violet",
-                      "title":  "External dependencies, identity, runtime",
-                      "items":  [
-                                    "Gemini first (aiExtractor.js:132), Ollama llava second (:135), then throw - one attempt each, no retry.",
-                                    "Cloudinary 403s live, so imageProcessor.js:55 falls back to a hardcoded localhost URL.",
-                                    "Atlas holds bills, users and sessions; three OAuth providers plus Gmail carry the OTP.",
-                                    "api.js:4 hardcodes the base URL; no Redis, no client cache, Loki auth_enabled: false."
-                                ]
-                  }
-              ]
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Bill Tracker — Runtime Architecture",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "scan-path",
+        "label": "Scan request path",
+        "focus": ["spa", "api", "auth", "ingest", "extract", "mongo"],
+        "note": "One continuous chain from the camera frame to the persisted bill document."
+      },
+      {
+        "id": "trust-boundaries",
+        "label": "Trust boundaries",
+        "focus": ["users", "spa", "api", "auth", "gemini", "media", "mongo"],
+        "note": "Where untrusted input enters and where bill data leaves the application boundary."
+      }
+    ]
+  },
+  "components": [
+    { "id": "users", "type": "external", "label": "Users", "sublabel": "Browser · camera", "pos": [40, 40], "size": [90, 52] },
+    { "id": "spa", "type": "frontend", "label": "React SPA", "sublabel": "Vite · Router", "tag": "Vercel static", "brand": "react", "pos": [40, 195], "size": [96, 56] },
+    { "id": "api", "type": "backend", "label": "Express API", "sublabel": ":3000 /api", "pos": [225, 195], "size": [90, 56] },
+    { "id": "auth", "type": "security", "label": "Session Gate", "sublabel": "Passport store", "tag": "401 anon", "pos": [410, 195], "size": [90, 56] },
+    { "id": "ingest", "type": "backend", "label": "Multipart", "sublabel": "Multer 10 MB", "tag": "ext only", "pos": [595, 195], "size": [90, 56] },
+    { "id": "extract", "type": "backend", "label": "AI Extractor", "sublabel": "sanitize · warranty", "tag": "Gemini → Llava", "pos": [780, 195], "size": [105, 56] },
+    { "id": "mongo", "type": "database", "label": "MongoDB", "sublabel": "billTracker", "tag": "User + Bill", "brand": "mongodb", "pos": [980, 195], "size": [90, 56] },
+    { "id": "idp", "type": "external", "label": "OAuth Providers", "sublabel": "Google · FB · Discord", "pos": [395, 40], "size": [120, 52] },
+    { "id": "gemini", "type": "external", "label": "Gemini API", "sublabel": "flash-lite vision", "brand": "google-gemini", "pos": [560, 40], "size": [105, 52] },
+    { "id": "media", "type": "cloud", "label": "Cloudinary", "sublabel": "bill-tracker CDN", "tag": "disk fallback", "brand": "cloudinary", "pos": [965, 40], "size": [100, 52] },
+    { "id": "ollama", "type": "external", "label": "Ollama · Llava", "sublabel": "127.0.0.1:11434", "tag": "host-local", "pos": [775, 355], "size": [120, 52] },
+    { "id": "otel", "type": "cloud", "label": "Prometheus", "sublabel": "Loki · Grafana :3001", "tag": "scrape 15s", "brand": "prometheus", "pos": [225, 355], "size": [120, 52] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Untrusted Client Network", "wraps": ["users"] },
+    { "kind": "region", "label": "Client Tier · Vercel Static Edge", "wraps": ["spa"] },
+    {
+      "kind": "security-group",
+      "label": "Application Trust Boundary · CORS allowlist + httpOnly session cookie",
+      "wraps": ["api", "auth", "ingest", "extract"]
+    },
+    { "kind": "region", "label": "Third-Party SaaS · bill data leaves the boundary", "wraps": ["idp", "gemini", "media"] },
+    { "kind": "region", "label": "Host-Local Services", "wraps": ["ollama"] },
+    { "kind": "region", "label": "Data Tier", "wraps": ["mongo"] },
+    { "kind": "region", "label": "Observability Plane", "wraps": ["otel"] }
+  ],
+  "connections": [
+    { "id": "capture", "from": "users", "to": "spa", "label": "HTTPS", "variant": "emphasis", "fromSide": "bottom", "toSide": "top", "labelDy": 40 },
+    { "id": "scan-post", "from": "spa", "to": "api", "label": "POST /bills/scan", "variant": "emphasis" },
+    { "id": "session-lookup", "from": "api", "to": "auth", "label": "session lookup", "variant": "emphasis" },
+    { "id": "gate-open", "from": "auth", "to": "ingest", "label": "401 anonymous", "variant": "emphasis" },
+    { "id": "oauth-redirect", "from": "auth", "to": "idp", "label": "OAuth 2.0 redirect", "variant": "security", "fromSide": "top", "toSide": "bottom", "labelDy": -50 },
+    { "id": "image-bytes", "from": "ingest", "to": "extract", "label": "base64 JPEG", "variant": "emphasis" },
+    { "id": "primary-extraction", "from": "extract", "to": "gemini", "label": "primary extraction", "fromSide": "top", "toSide": "bottom" },
+    { "id": "fallback-extraction", "from": "extract", "to": "ollama", "label": "fallback on failure", "variant": "dashed", "fromSide": "bottom", "toSide": "top" },
+    { "id": "image-cdn", "from": "extract", "to": "media", "label": "image upload", "fromSide": "top", "toSide": "bottom" },
+    { "id": "persist", "from": "extract", "to": "mongo", "label": "bill document", "variant": "emphasis" },
+    { "id": "telemetry", "from": "api", "to": "otel", "label": "scrape /metrics", "variant": "dashed", "fromSide": "bottom", "toSide": "top" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Primary path · one bill scan",
+      "items": [
+        "ScanBill.jsx grabs a getUserMedia frame, then POSTs multipart billImage to /api/bills/scan",
+        "Multer caps at 10 MB and allowlists .jpg .jpeg .png .webp by extension only — no MIME check (upload.js:23)",
+        "sanitizeAndEnrichData normalises every AI field and sets warrantyStatus at a 30-day threshold"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Trust boundaries",
+      "items": [
+        "cors() is pinned to CLIENT_URL with httpOnly sameSite=lax cookies; authenticate() guards every bill route",
+        "Ownership is enforced in the query — findByIdAndUserId and deleteByIdAndUserId both match userId",
+        "Cloudinary egress is where bill images leave the boundary; without keys they stay in ./uploads"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Dependencies and deployment",
+      "items": [
+        "Strict two-step AI chain: Gemini first, host-local Ollama + Llava only on failure; both down throws",
+        "Gmail OTP and all three OAuth strategies fall back to stdout logging and dummy_* credentials",
+        "vercel.json rewrites /api/(.*) to backend/dist/api/index.js, which does not exist; there is no CI"
+      ]
+    }
+  ]
 }
