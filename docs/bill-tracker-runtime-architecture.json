@@ -199,12 +199,13 @@
                             "from":  "edge",
                             "to":  "api",
                             "label":  "passport session gate",
-                            "variant":  "security"
+                            "variant":  "emphasis"
                         },
                         {
                             "from":  "api",
                             "to":  "service",
-                            "label":  "temp file path"
+                            "label":  "temp file path",
+                            "variant":  "emphasis"
                         },
                         {
                             "from":  "service",
